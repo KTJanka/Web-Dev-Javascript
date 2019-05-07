@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lottery</title>
+    <link rel="stylesheet" href="main.css">
+    <script>
+
+            function lotteryNum ()
+            {
+                
+                var userNum = document.getElementById("num").value;
+                var random = Math.floor((Math.random() * 10) + 1);
+
+                if (userNum == "" || isNaN(userNum) || userNum <= 0  || userNum > 10)
+                {
+                    alert("Please enter a valid number between 1-10.")
+                }
+                else 
+                {
+                    if(userNum == random)
+                    {
+                        alert("Congratulations!!! You win!");
+                    }
+                    else
+                    {
+                        alert("Not a winner. Better luck next time!");
+                    }
+                }
+            }
+    
+        </script>
+</head>
+<body>
+
+    <section>
+        <h1>Guess a 1-10 number and WIN!</h1>
+        Enter your number: <input type="text" id="num" value=""  >
+        <button onsubmit="return validateEntry();" onclick="lotteryNum();" >Good Luck!</button>
+        <img  id="moneySign" src="money.gif" alt="falling money">
+    </section>
+
+    
+
+    <footer>
+        Kyle Janka &copy; 2019
+    </footer>
+</body>
+</html>
